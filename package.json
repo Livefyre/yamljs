@@ -6,12 +6,11 @@
     "name": "Ross Pfahler",
     "email": "ross@livefyre.com"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "./yamljs.js",
-  "devDependencies": {
+  "dependencies": {
     "js-yaml": "2.1.3",
     "xtend": "2.1.1"
   },
-  "repository": "https://github.com/Livefyre/yamljs",
-  "scripts": {}
+  "repository": "https://github.com/Livefyre/yamljs"
 }
