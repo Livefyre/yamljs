@@ -1,7 +1,7 @@
 yamljs
 ====
 
-Extends js-yaml`https://github.com/nodeca/js-yaml` with a few Livefyre specific types.
+Extends [js-yaml][1] with a few Livefyre specific types.
 
 To compile yaml to json
 
@@ -9,5 +9,16 @@ To compile yaml to json
 yamljs.js sample1.yaml sample2.yaml > config.json
 ```
 
-yamljs will take any number of yaml files and overlay them. For example, if sample1.yaml defines env: dev,
-and sample2.yaml defines env: staging, then config.json will end up with {"env": "staging"}
+yamljs will take any number of yaml files and overlay them. For example, given two files: 
+
+**sample1.yaml**
+`env: dev`
+
+**sample2.yaml**
+`env: staging`
+
+then the generatedd config.json is
+`{"env": "staging"}`
+
+
+  [1]: https://github.com/nodeca/js-yaml
