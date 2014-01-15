@@ -1,0 +1,17 @@
+{
+  "name": "yamljs",
+  "description": "Livefyre yaml parser for javascript projects",
+  "author": "Ross Pfahler <ross@livefyre.com>",
+  "contributors": {
+    "name": "Ross Pfahler",
+    "email": "ross@livefyre.com"
+  },
+  "version": "1.0.0",
+  "bin": "./yamljs.js",
+  "devDependencies": {
+    "js-yaml": "2.1.3",
+    "xtend": "2.1.1"
+  },
+  "repository": "https://github.com/Livefyre/yamljs",
+  "scripts": {}
+}
