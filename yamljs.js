@@ -31,8 +31,11 @@ var spec = new yaml.Type('!spec', {
     loader: {
         kind: 'object',
         resolver: function(object) {
-            return object.value || object;
-        }    
+            if ('value' in object) {
+                return object.value;
+            }
+            throw 'value is required';
+        }
     }
 });
 
