@@ -2,7 +2,7 @@
 
 var fs = require('fs'),
     yaml = require('js-yaml'),
-    extend = require('xtend'),
+    extend = require('./util').extend,
     docs = [];
 
 var uri = new yaml.Type('!uri', {
@@ -55,4 +55,7 @@ args.forEach(function(filename) {
     }
 });
 
-console.log(JSON.stringify(extend.apply(this, docs)));
+var obj = {};
+docs.unshift(obj);
+extend.apply(this, docs)
+console.log(JSON.stringify(obj));
