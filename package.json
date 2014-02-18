@@ -6,10 +6,13 @@
     "name": "Ross Pfahler",
     "email": "ross@livefyre.com"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "dependencies": {
     "js-yaml": "2.1.3",
-    "xtend": "2.1.1"
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": "https://github.com/Livefyre/yamljs"
 }
