@@ -6,6 +6,7 @@
     "name": "Ross Pfahler",
     "email": "ross@livefyre.com"
   },
+  "license": "MIT",
   "version": "1.0.4",
   "dependencies": {
     "js-yaml": "2.1.3",
