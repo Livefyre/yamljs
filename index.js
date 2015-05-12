@@ -6,7 +6,7 @@ var schema = require('./schema');
 function mergeYaml(fileList) {
   var docs = fileList.map(function (fileName) {
     try {
-        var contents = fs.readFileSync(filename, 'utf8');
+        var contents = fs.readFileSync(fileName, 'utf8');
         return yaml.safeLoad(contents, {
             schema: schema
         });
@@ -18,8 +18,7 @@ function mergeYaml(fileList) {
 
   var obj = {};
   docs.unshift(obj);
-  extend.apply(this, docs);
-  return obj;
+  return extend.apply(null, docs);
 }
 
 module.exports = mergeYaml;
