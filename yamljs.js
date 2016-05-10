@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var yaml = require('js-yaml');
-var extend = require('./util').extend;
 var mergeYaml = require('./index');
 
 var args = process.argv.slice(2);

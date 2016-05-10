@@ -1,0 +1,13 @@
+app:
+  ga_tracking_id: !spec
+    description: Google Analytics Tracking ID
+    type: !!str ""
+    value: "SUCH GOOGLE"
+  assets_dir: !spec
+    description: Directory to serve at /assets/ (dev only)
+    type: !!str ""
+    value: ""
+  apis: !spec
+    description: API Spec files or directory of spec files
+    type: !!str ""
+    value: ""
