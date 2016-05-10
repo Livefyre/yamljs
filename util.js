@@ -11,7 +11,10 @@ function extend(target, var_mergeables) {
   var length = arguments.length;
   var options;
   var clone;
-
+  var name;
+  var src;
+  var copy;
+  
   // Iterate over each mergable passed in.
   for (; i < length; i++) {
 
@@ -49,7 +52,7 @@ function extend(target, var_mergeables) {
 
   // Return the modified object
   return target;
-};
+}
 
 module.exports = {
   extend: extend

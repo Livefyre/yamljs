@@ -10,10 +10,10 @@ describe('.parse', function () {
     assert.deepEqual(parsed, {
       app: {
         ga_tracking_id: 'SUCH GOOGLE',
-        apis: "",
-        assets_dir: "",
+        apis: '',
+        assets_dir: ''
       }
-    })
-  })
-})
+    });
+  });
+});
 

@@ -6,11 +6,11 @@ var schema = require('./schema');
 function mergeYaml(fileList) {
   var docs = fileList.map(function (fileName) {
     try {
-        var contents = fs.readFileSync(fileName, 'utf8');
-        return exports.parse(contents);
+      var contents = fs.readFileSync(fileName, 'utf8');
+      return exports.parse(contents);
     } catch (e) {
-        console.error('Error reading yaml file', e);
-        process.exit(1);
+      console.error('Error reading yaml file', e);
+      process.exit(1);
     }
   });
 
@@ -22,9 +22,9 @@ function mergeYaml(fileList) {
 module.exports = exports = mergeYaml;
 
 exports.stringify = function (obj, options) {
-  return yaml.safeDump(obj, { schema: schema })
-}
+  return yaml.safeDump(obj, {schema: schema});
+};
 
 exports.parse = function (obj, options) {
-  return yaml.safeLoad(obj, { schema: schema })
-}
+  return yaml.safeLoad(obj, {schema: schema});
+};
