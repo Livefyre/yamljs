@@ -21,6 +21,8 @@ function mergeYaml(fileList) {
 
 module.exports = exports = mergeYaml;
 
+exports.mergeYaml = mergeYaml;
+
 exports.loadInjected = function (onErr) {
   try {
     return exports.parse(process.env.YACC_INJECT);
