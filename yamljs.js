@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
-var mergeYaml = require('./index');
+var parser = require('./index');
 
 var args = process.argv.slice(2);
 
-var obj = mergeYaml(args);
+var obj = parser.loadInjectedOr(function () {
+  return parser.mergeYaml(args);
+});
+
 console.log(JSON.stringify(obj));

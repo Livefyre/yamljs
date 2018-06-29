@@ -21,6 +21,30 @@ function mergeYaml(fileList) {
 
 module.exports = exports = mergeYaml;
 
+exports.mergeYaml = mergeYaml;
+
+exports.loadInjected = function (onErr) {
+  try {
+    return exports.parse(process.env.YACC_INJECT);
+  } catch (e) {
+    if (onErr) {
+      return onErr(e);
+    }
+    console.error('Unable to read YACC_INJECT environment variable', e);
+    process.exit(2);
+  }
+}
+/**
+ * Uses a fully hydrated config from `process.env.YACC_INJECT`,
+ * or falls back to the callback.
+ */
+exports.loadInjectedOr = function (callback) {
+  if (!process.env.YACC_INJECT) {
+    return callback();
+  }
+  return exports.loadInjected();
+}
+
 exports.stringify = function (obj, options) {
   return yaml.safeDump(obj, {schema: schema});
 };
