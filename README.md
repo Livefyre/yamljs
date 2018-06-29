@@ -5,7 +5,7 @@ This project is out of date with https://github.com/Livefyre/py-yacc. Users
 should instead switch injected configs.
 
 ```
-export PYYACC_INJECT=$(pyyacc3 config/app.yaml /etc/default/cluster.yaml -o -)
+export YACC_INJECT=$(pyyacc3 config/app.yaml /etc/default/cluster.yaml -o -)
 ... run my program ...
 
 var config = yamljs.loadInjected();
