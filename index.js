@@ -23,21 +23,21 @@ module.exports = exports = mergeYaml;
 
 exports.loadInjected = function (onErr) {
   try {
-    return exports.parse(process.env.PYYACC_INJECT);
+    return exports.parse(process.env.YACC_INJECT);
   } catch (e) {
     if (onErr) {
       return onErr(e);
     }
-    console.error('Unable to read PYYACC_INJECT environment variable', e);
+    console.error('Unable to read YACC_INJECT environment variable', e);
     process.exit(2);
   }
 }
 /**
- * Uses a fully hydrated config from `process.env.PYYACC_INJECT`,
+ * Uses a fully hydrated config from `process.env.YACC_INJECT`,
  * or falls back to the callback.
  */
 exports.loadInjectedOr = function (callback) {
-  if (!process.env.PYYACC_INJECT) {
+  if (!process.env.YACC_INJECT) {
     return callback();
   }
   return exports.loadInjected();
