@@ -34,4 +34,17 @@ var spec = new yaml.Type('!spec', {
   }
 });
 
-module.exports = yaml.Schema.create([uri, required, spec]);
+var environment = new yaml.Type('!environment', {
+  loader: {
+    kind: 'string',
+    resolver: function (object) {
+      if (object === yaml.NIL) {
+        throw 'field is required';
+        return yaml.NIL;
+      }
+      return process.env[object];
+    }
+  }
+});
+
+module.exports = yaml.Schema.create([uri, required, spec, environment]);

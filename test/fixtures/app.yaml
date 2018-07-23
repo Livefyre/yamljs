@@ -11,3 +11,7 @@ app:
     description: API Spec files or directory of spec files
     type: !!str ""
     value: ""
+  env_var: !spec
+    description: A variable from the environment
+    type: !!str ""
+    value: !environment TEST_ENV_VAR
