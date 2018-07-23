@@ -15,3 +15,7 @@ app:
     description: A variable from the environment
     type: !!str ""
     value: !environment TEST_ENV_VAR
+  env_var_object: !spec
+    description: A variable from the environment
+    type: !!str ""
+    value: !environment TEST_ENV_VAR_OBJECT

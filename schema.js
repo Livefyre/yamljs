@@ -42,7 +42,7 @@ var environment = new yaml.Type('!environment', {
         throw 'field is required';
         return yaml.NIL;
       }
-      return process.env[object];
+      return yaml.safeLoad(process.env[object]);
     }
   }
 });
